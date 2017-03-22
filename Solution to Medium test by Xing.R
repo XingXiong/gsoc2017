@@ -50,5 +50,6 @@ crawl_species <- function(validurl,outputfilename1,outputfilename2){
     if (year[i] != "character(0)"){final[i,5] = year[i]} else{final[i,5] = " "}}
   write.csv(final,outputfilename1,row.names = FALSE)
   write.csv(full_scientific_name,outputfilename2,row.names = FALSE)
+  species
 }
 crawl_species("http://ftp.funet.fi/pub/sci/bio/life/insecta/lepidoptera/ditrysia/papilionoidea/papilionidae/papilioninae/lamproptera/","allcomponents.csv","full sciname.csv")
