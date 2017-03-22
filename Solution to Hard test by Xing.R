@@ -1,10 +1,10 @@
 
 
 #################
-create_csv <- function(x,y){
+create_csv <- function(inputfilename,outputfilename){
   require(stringr)
   # Read all lines
-  data <- readLines(x)
+  data <- readLines(inputfilename)
   a <- length(data)
   # Create a new data frame with header.
   csvfile <- data.frame(Family = "",SciName = "",Distribution = "")
@@ -42,6 +42,6 @@ create_csv <- function(x,y){
   # Do some tidy to make the output more cleaner.
   csvfile <- csvfile[-1,]
   csvfile$Distribution <- gsub("^[[:blank:]]+","",csvfile$Distribution)
-  write.csv(csvfile,y,row.names = FALSE)
+  write.csv(csvfile,outputfilename,row.names = FALSE)
 }
 create_csv("taxo01.txt","taxo01_out by Xing.csv")
