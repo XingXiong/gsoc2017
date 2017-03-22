@@ -3,10 +3,10 @@
 # Almost the same as easy test2,I get ".SN li" from the website structure.
 # 
 
-crawl_species <- function(x,y,z){
+crawl_species <- function(validurl,outputfilename1,outputfilename2){
   require(rvest)
   require(stringr)
-  url1 <- x
+  url1 <- validurl
   species <- url1 %>%
     read_html()%>%
     html_nodes(".SN li")
@@ -43,7 +43,7 @@ crawl_species <- function(x,y,z){
     if (subspecies[i] != "character(0)"){final[i,3] = subspecies[i]} else{final[i,3] = " "}
     if (author[i] != "character(0)"){final[i,4] = author[i]} else{final[i,4] = " "}
     if (year[i] != "character(0)"){final[i,5] = year[i]} else{final[i,5] = " "}}
-  write.csv(final,y,row.names = FALSE)
-  write.csv(full_scientific_name,z,row.names = FALSE)
+  write.csv(final,outputfilename1,row.names = FALSE)
+  write.csv(full_scientific_name,outputfilename2,row.names = FALSE)
 }
 crawl_species("http://ftp.funet.fi/pub/sci/bio/life/insecta/lepidoptera/ditrysia/papilionoidea/papilionidae/papilioninae/lamproptera/","allcomponents.csv","full sciname.csv")
