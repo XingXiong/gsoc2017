@@ -4,7 +4,7 @@
 # 
 
 crawl_species <- function(validurl,outputfilename1,outputfilename2){
-  require(rvest)
+  require(rvest) 
   require(stringr)
   url1 <- validurl
   species <- url1 %>%
