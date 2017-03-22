@@ -1,7 +1,7 @@
 
 
 #################
-create_csv <- function(x){
+create_csv <- function(x,y){
   require(stringr)
   # Read all lines
   data <- readLines(x)
@@ -42,6 +42,6 @@ create_csv <- function(x){
   # Do some tidy to make the output more cleaner.
   csvfile <- csvfile[-1,]
   csvfile$Distribution <- gsub("^[[:blank:]]+","",csvfile$Distribution)
-  write.csv(csvfile,"taxo01_out by Xing.csv",row.names = FALSE)
+  write.csv(csvfile,y,row.names = FALSE)
 }
-create_csv("taxo01.txt")
+create_csv("taxo01.txt","taxo01_out by Xing.csv")
