@@ -44,7 +44,8 @@ crawl_species <- function(validurl,outputfilename1,outputfilename2){
   
   for (i in 1:a){if (genus[i] != "character(0)"){final[i,1] = genus[i]} else{final[i,1] = " 
 "}
-    if (species[i] != "character(0)"){final[i,2] = species[i]} else{final[i,2] = " "}
+    if (species[i] != "character(0)"){final[i,2] = species[i]} else{species[i] = " "
+    final[i,2] = " "}
     if (! is.na(subspecies1[i])){final[i,3] = subspecies1[i]} else{final[i,3] = " "}
     if (author[i] != "character(0)"){final[i,4] = author[i]} else{final[i,4] = " "}
     if (year[i] != "character(0)"){final[i,5] = year[i]} else{final[i,5] = " "}}
