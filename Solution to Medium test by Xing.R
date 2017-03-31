@@ -2,7 +2,7 @@
 ###############
 # Almost the same as easy test2,I get ".SN li" from the website structure.
 # 
-   
+    
 crawl_species <- function(validurl,outputfilename1,outputfilename2){
   require(rvest)
   require(stringr)
