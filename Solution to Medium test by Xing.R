@@ -26,7 +26,7 @@ crawl_species <- function(validurl,outputfilename1,outputfilename2){
   rest3 <- gsub("[?[0-9]+]?","",rest2)
   species <- str_extract_all(rest3,"^\\s?[A-z]+")
   subspecies <- gsub("^\\s?[A-z]+","",rest3)
-  
+   
   a <- length(full_scientific_name)
   final <- data.frame(genus = c(rep(0,a)),species = c(rep(0,a)),subspecies = c(rep
                                                                                (0,a)),author = c(rep(0,a)),year = c(rep(0,a)))
